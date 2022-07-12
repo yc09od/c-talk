@@ -1,8 +1,9 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import {Outlet, Link} from "react-router-dom";
+import MainNav from "./main-nav";
+import MainLayoutFooter from "../shared/component/footer/main-layout-footer";
 
 class MainLayout extends React.Component {
-    myClass = 'container bg-light';
 
     constructor(props) {
         super(props);
@@ -10,64 +11,12 @@ class MainLayout extends React.Component {
 
     render() {
         return (
-            <div>
-                <div className="container-fluid bg-light">
-                    <div className={this.myClass}>
-                        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                            <div className="container-fluid">
-                                <a className="navbar-brand" href="*"><Link to="/">C Talk</Link></a>
-                                <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                        aria-expanded="false"
-                                        aria-label="Toggle navigation">
-                                    <span className="navbar-toggler-icon"></span>
-                                </button>
-                                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                                        <li className="nav-item">
-                                            <Link class="nav-link" to="/">Home</Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link class="nav-link" to="/about-us">About Us</Link>
-                                        </li>
-                                        <li className="nav-item dropdown">
-                                            <a className="nav-link dropdown-toggle"
-                                               href="src/layout/layout#main-layout.js" id="navbarDropdown"
-                                               role="button" data-bs-toggle="dropdown"
-                                               aria-expanded="false">
-                                                Dropdown
-                                            </a>
-                                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <li><a className="dropdown-item"
-                                                       href="src/layout/layout#main-layout.js">Action</a></li>
-                                                <li><a className="dropdown-item"
-                                                       href="src/layout/layout#main-layout.js">Another action</a></li>
-                                                <li>
-                                                    <hr className="dropdown-divider"/>
-                                                </li>
-                                                <li><a className="dropdown-item"
-                                                       href="src/layout/layout#main-layout.js">Something else here</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="nav-item">
-                                            <a className="nav-link disabled" href="src/layout/layout#main-layout.js"
-                                               tabIndex="-1"
-                                               aria-disabled="true">Disabled</a>
-                                        </li>
-                                    </ul>
-                                    <form className="d-flex">
-                                        <input className="form-control me-2" type="search" placeholder="Search"
-                                               aria-label="Search"/>
-                                        <button className="btn btn-outline-success" type="submit">Search</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-                <div class="container-fluid">
+            <div className={"main-container"}>
+                <MainNav/>
+                <div className="main-container-body container-fluid px-0">
                     <Outlet/>
+
+                    <MainLayoutFooter></MainLayoutFooter>
                 </div>
             </div>
         );
