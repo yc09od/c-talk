@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import React from "react"
 
-class MainNav extends React.Component{
+class AppNav extends React.Component{
     myClass = 'container bg-light';
 
     render() {
@@ -20,13 +20,10 @@ class MainNav extends React.Component{
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/">Home</Link>
+                                        <Link className="nav-link" to="/app">Home</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/app">App</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/about-us">About Us</Link>
+                                        <Link className="nav-link" to="/profile">Profile</Link>
                                     </li>
                                 </ul>
                                 <div className="d-flex">
@@ -50,4 +47,4 @@ class MainNav extends React.Component{
 
 }
 
-export default MainNav;
+export default AppNav;
